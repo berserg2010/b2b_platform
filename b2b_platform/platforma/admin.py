@@ -50,5 +50,5 @@ class OfferAdmin (admin.ModelAdmin):
 admin.site.register (models.Customer, CustomerAdmin)
 admin.site.register (models.Producer, ProducerAdmin)
 admin.site.register (models.Category, CategoryAdmin)
-admin.site.register (models.Tender, TenderAdmin)
+admin.site.register (models.Order, TenderAdmin)
 admin.site.register (models.Offer, OfferAdmin)

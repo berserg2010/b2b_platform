@@ -57,7 +57,7 @@ class Category (models.Model):
         return self.title
 
 
-class Tender (models.Model):
+class Order (models.Model):
     """Заказ конкретного Заказчика"""
     customer = models.ForeignKey ('Customer',
                                   on_delete=models.CASCADE,
@@ -68,10 +68,10 @@ class Tender (models.Model):
                                   on_delete=models.SET_NULL,
                                   null=True,
                                   verbose_name='Категория')
-    city_tender = models.CharField (max_length=50,
+    city_order = models.CharField (max_length=50,
                                     verbose_name='Город',
                                     blank=True)
-    budget_tender = models.FloatField (verbose_name='Бюджет, руб.',
+    budget_order = models.FloatField (verbose_name='Бюджет, руб.',
                                        blank=True)
     expiration_date = models.DateField (default=date.today,
                                         verbose_name='Дата окончания подачи предложений')
@@ -84,7 +84,7 @@ class Tender (models.Model):
                                     blank=True)
     description = models.TextField (max_length=5000,
                                     verbose_name='Описание')
-    file_tender = models.FileField (upload_to='',
+    file_order = models.FileField (upload_to='',
                                     verbose_name='Прикрепить файлы',
                                     blank=True)
 
@@ -94,7 +94,7 @@ class Tender (models.Model):
 
 class Offer (models.Model):
     """Предложение для конкретного Тендера от конкретного Исполнителя"""
-    title = models.ForeignKey ('Tender',
+    title = models.ForeignKey ('Order',
                                 on_delete=models.CASCADE,
                                 verbose_name='Тендер')
     producer = models.ForeignKey('Producer',
@@ -113,9 +113,10 @@ class Offer (models.Model):
     file_offer = models.FileField (upload_to='',
                                     verbose_name='Прикрепить файлы',
                                    blank=True)
+    # Принятие предложения, кнопка в интерфейсе. Если True, то создается объект класса Contract
+    # adoption = False
 
     def __str__(self):
         return 'Исполнитель: {0} / Тендер: {1} / Заказчик: {2}'.format(self.producer, self.title, self.customer)
 
 
-git add .

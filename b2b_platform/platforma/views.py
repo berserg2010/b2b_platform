@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Tender, Category, Producer, Customer
+from .models import Order, Category, Producer, Customer
 
 
 def index(request):
@@ -32,12 +32,12 @@ def producers(request):
                    )
 
 
-def tenders(request):
+def orders(request):
     return render (request,
-                   'platforma/tenders.html',
+                   'platforma/orders.html',
                    {
                        'header': 'Тендеры',
-                       'tender_card': Tender.objects.all()
+                       'tender_card': Order.objects.all()
                    }
 
                    )

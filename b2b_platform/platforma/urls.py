@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('customers', views.customers, name='customers'),
     path('producers', views.producers, name='producers'),
-    path('tenders', views.tenders, name='tenders')
+    path('orders', views.orders, name='orders')
 ]
 
 if settings.DEBUG:
