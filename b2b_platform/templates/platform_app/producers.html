@@ -1,0 +1,28 @@
+{% block title %}{% endblock %}
+
+{% block main %}
+
+	<header class="header"></header>
+
+	<section class="home">
+		<div class="container">
+
+			<div class="home_inner">
+				<h1>{{ header }}</h1>
+			</div>
+
+			<ul>
+				{% for prd in producer_card %}
+					<li>
+						<p>{{ prd.title }}</p>
+						<p>ИНН: {{ prd.inn }}</p>
+						<p>КПП: {{ prd.kpp }}</p>
+						<address>Юридический адрес: {{ prd.legal_address }}</address>
+					</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</section>
+
+{% endblock %}

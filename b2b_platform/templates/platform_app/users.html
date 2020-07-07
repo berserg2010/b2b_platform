@@ -1,0 +1,27 @@
+{% block title %}{% endblock %}
+
+{% block main %}
+
+	<header class="header"></header>
+
+	<section class="home">
+		<div class="container">
+			<div class="home_inner">
+				<h1>{{ header }}</h1>
+			</div>
+
+			<ul>
+				{% for user in user_card %}
+					<li>
+						<p>{{ user.title }}</p>
+						<p>ИНН: {{ user.inn }}</p>
+						<p>КПП: {{ user.kpp }}</p>
+						<address>Юридический адрес: {{ user.legal_address }}</address>
+					</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</section>
+
+{% endblock %}

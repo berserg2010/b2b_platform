@@ -1,0 +1,22 @@
+{% load static %}
+
+{% block title %}{% endblock %}
+
+
+{% block header %}
+
+	<header class="">
+		<a class="" href='{% url 'b2b_auth:sign_in' %}'>Войти</a>
+		<a class="" href='{% url 'b2b_auth:sign_up' %}'>Регистрация</a>
+	</header>
+
+{% endblock %}
+
+
+{% block main %}
+
+	<section class="">
+		<p>This is a home page</p>
+	</section>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% load static %}
+
+{% block title %}Sign Ip{% endblock %}
+
+{% block header %}{% endblock %}
+
+
+{% block main %}
+
+	<form class="" action="" method="post">
+		{% csrf_token %}
+
+		<div class="">
+			{{ form.username }}
+		</div>
+
+		<div class="">
+			{{ form.password }}
+		</div>
+
+		<button class="" type="submit">Register</button>
+
+	</form>
+
+	<p class="">
+		<a class="" href="">Recover password</a>
+		<a class="" href="{% url 'b2b_auth:sign_up' %}">Sign Up</a>
+	</p>
+
+{% endblock %}

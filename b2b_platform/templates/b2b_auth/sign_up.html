@@ -1,0 +1,38 @@
+{% load static %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block header %}{% endblock %}
+
+
+{% block main %}
+
+	<form class="" action="" method="post">
+		{% csrf_token %}
+
+		<div class="">
+			{{ form.username }}
+		</div>
+
+		<div class="">
+			{{ form.email }}
+		</div>
+
+		<div class="">
+			{{ form.password1 }}
+		</div>
+
+		<div class="">
+			{{ form.password2 }}
+		</div>
+
+		<button class="" type="submit">Register</button>
+
+	</form>
+
+	<p class="">
+		Already have an account?
+		<a class="" href="{% url 'b2b_auth:sign_in' %}">Login</a>
+	</p>
+
+{% endblock %}

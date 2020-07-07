@@ -1,0 +1,29 @@
+{% block title %}{% endblock %}
+
+{% block main %}
+
+	<header class="header"></header>
+
+	<section class="home">
+		<div class="container">
+
+			<div class="home_inner">
+				<h1>{{ header }}</h1>
+			</div>
+
+			<ul>
+				{% for tender in tender_card %}
+					<li>
+						<p>{{ tender.title }}</p>
+						<p>Категория: {{ tender.category }}</p>
+						<p>Заказчик: {{ tender.customer }}</p>
+						<p>Дата размещения: {{ tender.placement_date }}</p>
+						<p>Дата последнего изменения: {{ tender.last_modified_date }}</p>
+						<p>Описание: {{ tender.description }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+
+{% endblock %}

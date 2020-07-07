@@ -1,0 +1,29 @@
+{% block title %}{% endblock %}
+
+{% block main %}
+
+	<header class="header"></header>
+
+	<section class="home">
+		<div class="container">
+
+			<div class="home_inner">
+				<h1>{{ header }}</h1>
+			</div>
+
+			<ul>
+				{% for cst in customer_card %}
+					<li>
+						<p>{{ cst.title }}</p>
+						<p>ИНН: {{ cst.inn }}</p>
+						<p>КПП: {{ cst.kpp }}</p>
+						<address>Юридический адрес: {{ cst.legal_address }}</address>
+					</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</section>
+
+{% endblock %}
+
