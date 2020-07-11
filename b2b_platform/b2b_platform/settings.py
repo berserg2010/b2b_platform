@@ -86,3 +86,6 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/b2b-auth/sign-in'
+LOGIN_REDIRECT_URL = '/private_side/'
