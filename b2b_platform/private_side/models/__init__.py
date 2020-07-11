@@ -1,2 +1,2 @@
-from .customer import Order
-from .producer import Offer
+from .offer import Offer
+from .order import Order

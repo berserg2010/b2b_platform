@@ -36,10 +36,11 @@ CLASSIFIER_OF_NATIONAL_ECONOMY_BRANCHES_CHOICES = [
 ]
 
 
-class CustomAuth(models.Model):
+class CustomUser(models.Model):
 
     user = models.OneToOneField(
         get_user_model(),
+        primary_key=True,
         on_delete=models.CASCADE,
     )
     tel = models.CharField(

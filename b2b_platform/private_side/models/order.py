@@ -28,8 +28,8 @@ class Order(models.Model):
     )
     budget_order = models.FloatField(
         verbose_name='Бюджет, руб.',
+        null=True,
         blank=True,
-        default=None,
     )
     expiration_date = models.DateField(
         default=date.today,

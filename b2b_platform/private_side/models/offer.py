@@ -1,14 +1,13 @@
 from django.db import models
-from django.contrib.auth import get_user_model
 
 
 class Offer(models.Model):
 
-    title = models.ForeignKey(
-        'Order',
-        on_delete=models.CASCADE,
-        verbose_name='Тендер',
-    )
+    # title = models.ForeignKey(
+    #     'Order',
+    #     on_delete=models.CASCADE,
+    #     verbose_name='Тендер',
+    # )
     # producer = models.ForeignKey(
     #     'Producer',
     #     on_delete=models.CASCADE,
